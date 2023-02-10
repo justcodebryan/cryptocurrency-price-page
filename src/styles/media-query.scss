@@ -1,6 +1,4 @@
-$pc: 1024px; // PC screen size.
-$tablet: 720px; // Tablet screen size.
-$phone: 320px; // Phone screen size.
+@import './variables.scss';
 
 @mixin responsive($media) {
   @if $media == phone {

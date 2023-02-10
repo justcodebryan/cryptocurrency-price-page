@@ -11,23 +11,31 @@ export const $request = <TResponse = unknown, TParams = unknown, TData = unknown
   const token = import.meta.env.VITE_API_KEY
   instance.defaults.headers.common['X-CoinAPI-Key'] = token
 
-  return instance
-    .request({
-      url,
-      method,
-      params,
-      data,
-    })
-    .then((res) => {
-      if (res && res.data) {
-        return Promise.resolve(JSON.parse(res.data))
-      }
+  return new Promise((resolve, reject) => {
+    instance
+      .request({
+        url,
+        method,
+        params,
+        data,
+      })
+      .then((res) => {
+        // console.log(res)
+        // if (res && res.data) {
+        //   return Promise.resolve(JSON.parse(res.data))
+        // }
+        console.log(res)
+        if (res && res.data) {
+          return resolve(res.data)
+        }
 
-      return Promise.reject(res)
-    })
-    .catch((err) => {
-      console.error(err)
-    })
+        return reject(res)
+      })
+      .catch((err) => {
+        console.error(err)
+        reject(err)
+      })
+  })
 }
 
 export const $get = <TResponse = unknown, TParams extends object = AnyObject>(

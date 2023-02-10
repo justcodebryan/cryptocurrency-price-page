@@ -67,8 +67,8 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "pnpm lint:fix",
     "*.{scss,css}": "pnpm lint:style",
+    "*.{js,jsx,ts,tsx}": "pnpm lint:fix",
     "*.{js,jsx,ts,tsx,json}": "pnpm format"
   },
   "_moduleAliases": {

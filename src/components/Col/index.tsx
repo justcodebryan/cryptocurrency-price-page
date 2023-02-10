@@ -3,7 +3,7 @@ import { PropsWithChildren } from 'react'
 type ColProps = PropsWithChildren
 
 const Col = ({ children }: ColProps) => {
-  return <div>{children}</div>
+  return <>{children}</>
 }
 
 export default Col

@@ -50,9 +50,16 @@ const CurrencyPage = () => {
         {(currencyList || []).map((currency) => (
           <Card key={currency.asset_id}>
             <div className={styles['currency-list-item']}>
-              <Title level={1}>{currency.name}</Title>
-              <Title level={2}>${currency.price_usd}</Title>
-              <Typography>volume: {currency.volume_1day_usd}</Typography>
+              <Title level={1} className={styles['currency-list-item-title']}>
+                {currency.name}
+              </Title>
+              <Title level={2} className={styles['currency-list-item-price']}>
+                ${currency.price_usd}
+              </Title>
+              <Typography className={styles['currency-list-item-price']}>
+                <b>volume:</b>
+                <br /> {currency.volume_1day_usd}
+              </Typography>
             </div>
           </Card>
         ))}

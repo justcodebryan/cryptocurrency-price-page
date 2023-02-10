@@ -1,12 +1,9 @@
 import classNames from 'classnames'
-import { CSSProperties, PropsWithChildren } from 'react'
+import { DetailedHTMLProps, HTMLAttributes, PropsWithChildren } from 'react'
 
 import styles from './styles.module.scss'
 
-type SectionProps = PropsWithChildren<{
-  className?: string
-  style?: CSSProperties
-}>
+type SectionProps = PropsWithChildren<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>>
 
 const Section = ({ style, className, children }: SectionProps) => {
   const internalClass = classNames([styles['section'], className])

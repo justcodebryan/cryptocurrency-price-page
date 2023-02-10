@@ -1,6 +1,8 @@
 import '@/styles/reset.css'
-import { Link, useRoutes } from 'raviger'
+import '@/styles/index.scss'
+import { useRoutes } from 'raviger'
 import { Suspense } from 'react'
+import Box from './components/Box'
 import routes from './routes'
 
 function App() {
@@ -9,10 +11,7 @@ function App() {
   return (
     <div className="App">
       <Suspense fallback={<div>Loading...</div>}>
-        <Link href="/currency">Currency List</Link>
-        <br />
-        <Link href="/currency/ETH">Currency Detail Page</Link>
-        {route}
+        <Box>{route}</Box>
       </Suspense>
     </div>
   )

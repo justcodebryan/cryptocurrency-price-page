@@ -1,6 +1,7 @@
-.App {
-  width: 100vw;
+.box {
+  width: calc(100% - 24px * 2);
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }

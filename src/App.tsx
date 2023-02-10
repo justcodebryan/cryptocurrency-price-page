@@ -9,7 +9,7 @@ function App() {
   const route = useRoutes(routes)
 
   return (
-    <div className="App">
+    <div className="app">
       <Suspense fallback={<div>Loading...</div>}>
         <Box>{route}</Box>
       </Suspense>

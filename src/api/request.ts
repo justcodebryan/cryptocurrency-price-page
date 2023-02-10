@@ -2,15 +2,15 @@ import { AnyObject } from '@/types'
 import { CustomResponse } from '@/types/api'
 import instance from './instance'
 
-export const $request = <TResponse = any, TParams = any, TData = any>(
+export const $request = <TResponse = unknown, TParams = unknown, TData = unknown>(
   url: string,
   method: string,
   params: TParams,
   data: TData
 ): CustomResponse<TResponse> => {
-  // const token = 'token'
+  const token = import.meta.env.API_KEY
 
-  // instance.defaults.headers.common['Authorization'] =
+  instance.defaults.headers.common['X-CoinAPI-Key'] = token
   // res.data is a string that produced by JSON.stringify.
   return instance
     .request({
@@ -31,22 +31,22 @@ export const $request = <TResponse = any, TParams = any, TData = any>(
     })
 }
 
-export const $get = <TResponse = any, TParams extends object = AnyObject>(
+export const $get = <TResponse = unknown, TParams extends object = AnyObject>(
   url: string,
   params?: TParams
 ): CustomResponse<TResponse> => $request<TResponse>(url, 'GET', params || {}, {})
 
-export const $post = <TResponse = any, TData extends object = AnyObject>(
+export const $post = <TResponse = unknown, TData extends object = AnyObject>(
   url: string,
   data: TData
 ): CustomResponse<TResponse> => $request<TResponse>(url, 'POST', {}, data)
 
-export const $put = <TResponse = any, TData extends object = AnyObject>(
+export const $put = <TResponse = unknown, TData extends object = AnyObject>(
   url: string,
   data: TData
 ): CustomResponse<TResponse> => $request<TResponse>(url, 'PUT', {}, data)
 
-export const $delete = <TResponse = any, TData extends object = AnyObject>(
+export const $delete = <TResponse = unknown, TData extends object = AnyObject>(
   url: string,
   data: TData
 ): CustomResponse<TResponse> => $request<TResponse>(url, 'DELETE', {}, data)

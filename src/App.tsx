@@ -4,8 +4,10 @@ import { fetchCurrencyList } from './services/currency'
 
 function App() {
   const getCurrencyList = async () => {
-    const res = await fetchCurrencyList(1, 10)
-    console.log(res)
+    const res = await fetchCurrencyList('BTC;ETH')
+    res.forEach((currency) => {
+      console.log(currency.asset_id)
+    })
   }
 
   useEffectOnce(() => {

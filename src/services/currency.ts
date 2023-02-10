@@ -1,8 +1,7 @@
 import { $get } from '@/api'
 import { Currency } from '@/types/currency'
 
-export const fetchCurrencyList = (current = 1, pageSize = 10) =>
-  $get<Currency>('/v1/assets', {
-    current,
-    pageSize,
+export const fetchCurrencyList = (filter_asset_id: string) =>
+  $get<Currency[]>('/v1/assets', {
+    filter_asset_id,
   })

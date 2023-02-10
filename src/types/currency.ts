@@ -16,3 +16,13 @@ export type Currency = {
   volume_1mth_usd: number
   price_usd: number
 }
+
+export enum CoinEnum {
+  BitCoin = 'BTC',
+  Ether = 'ETH',
+  LiteCoin = 'LTC',
+  Monero = 'XMR',
+  Ripple = 'XRP',
+  DogeCoin = 'DOGE',
+  Dash = 'DASH',
+}

@@ -10,7 +10,7 @@ pnpm install
 2. Config dot environment file
 
 ```bash
-cp ./.env ./.env.local
+cp ./.env ./.env.dev.local
 ```
 
 3. Start development server

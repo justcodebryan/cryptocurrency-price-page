@@ -8,7 +8,9 @@ export const $request = <TResponse = unknown, TParams = unknown, TData = unknown
   params: TParams,
   data: TData
 ): CustomResponse<TResponse> => {
-  const token = import.meta.env.API_KEY
+  const token = import.meta.env.VITE_API_KEY
+
+  console.log(import.meta.env)
 
   instance.defaults.headers.common['X-CoinAPI-Key'] = token
   // res.data is a string that produced by JSON.stringify.

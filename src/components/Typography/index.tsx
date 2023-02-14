@@ -1,9 +1,9 @@
-import { PropsWithChildren } from 'react'
+import { DetailedHTMLProps, HTMLAttributes, PropsWithChildren } from 'react'
 
-type TypographyProps = PropsWithChildren
+type TypographyProps = PropsWithChildren<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>>
 
-const Typography = ({ children }: TypographyProps) => {
-  return <div>{children}</div>
+const Typography = ({ children, ...rest }: TypographyProps) => {
+  return <div {...rest}>{children}</div>
 }
 
 export default Typography

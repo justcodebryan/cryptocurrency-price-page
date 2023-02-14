@@ -1,18 +1,18 @@
 import classNames from 'classnames'
-import { CSSProperties, PropsWithChildren, cloneElement } from 'react'
+import { DetailedHTMLProps, HTMLAttributes, PropsWithChildren, cloneElement } from 'react'
 
 import styles from './styles.module.scss'
 
-type TitleProps = PropsWithChildren<{
-  level?: 1 | 2 | 3 | 4
-  style?: CSSProperties
-  className?: string
-}>
+type TitleProps = PropsWithChildren<
+  DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> & {
+    level?: 1 | 2 | 3 | 4
+  }
+>
 
 const Title = ({ level, style, className, children, ...rest }: TitleProps) => {
   let renderItem
 
-  const internalClassName = classNames([styles['title'], level ? styles[`title-${level}`] : '', className])
+  const internalClass = classNames([styles['title'], level ? styles[`title-${level}`] : '', className])
 
   switch (level) {
     case 1:
@@ -34,7 +34,7 @@ const Title = ({ level, style, className, children, ...rest }: TitleProps) => {
   return cloneElement(renderItem, {
     ...rest,
     style,
-    className: internalClassName,
+    className: internalClass,
   })
 }
 

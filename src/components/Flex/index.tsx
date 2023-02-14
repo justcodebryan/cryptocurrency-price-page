@@ -1,8 +1,8 @@
-import { PropsWithChildren } from 'react'
+import { DetailedHTMLProps, HTMLAttributes, PropsWithChildren } from 'react'
 
 import styles from './styles.module.scss'
 
-type FlexProps = PropsWithChildren
+type FlexProps = PropsWithChildren<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>>
 
 const Flex = ({ children, ...rest }: FlexProps) => {
   return (

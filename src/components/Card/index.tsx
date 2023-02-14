@@ -1,14 +1,18 @@
-import classnames from 'classnames'
-import { PropsWithChildren } from 'react'
+import classNames from 'classnames'
+import { DetailedHTMLProps, HTMLAttributes, PropsWithChildren } from 'react'
 
 import styles from './styles.module.scss'
 
-type CardProps = PropsWithChildren
+type CardProps = PropsWithChildren<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>>
 
-const Card = ({ children }: CardProps) => {
-  const className = classnames([styles['card-wrapper'], styles['card']])
+const Card = ({ children, className, ...rest }: CardProps) => {
+  const internalClass = classNames([styles['card-wrapper'], styles['card'], className])
 
-  return <div className={className}>{children}</div>
+  return (
+    <div className={internalClass} {...rest}>
+      {children}
+    </div>
+  )
 }
 
 export default Card

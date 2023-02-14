@@ -20,11 +20,6 @@ export const $request = <TResponse = unknown, TParams = unknown, TData = unknown
         data,
       })
       .then((res) => {
-        // console.log(res)
-        // if (res && res.data) {
-        //   return Promise.resolve(JSON.parse(res.data))
-        // }
-        console.log(res)
         if (res && res.data) {
           return resolve(res.data)
         }

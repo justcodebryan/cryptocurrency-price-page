@@ -26,3 +26,9 @@ export enum CoinEnum {
   DogeCoin = 'DOGE',
   Dash = 'DASH',
 }
+
+export const CurrencyQueryString = Object.keys(CoinEnum)
+  .map((key: string) => {
+    return CoinEnum[key as keyof typeof CoinEnum]
+  })
+  .join(';')

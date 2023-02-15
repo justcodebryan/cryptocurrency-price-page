@@ -4,23 +4,11 @@
   }
 
   &-list {
-    width: 100%;
+    width: calc(100% - 12px * 2);
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 48px;
     grid-auto-rows: minmax(160px, auto);
-
-    @media screen and (max-width: 1280px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media screen and (max-width: 840px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media screen and (max-width: 560px) {
-      grid-template-columns: repeat(1, 1fr);
-    }
 
     &-item {
       padding: 12px 0 8px 16px;
@@ -29,7 +17,7 @@
 
       &-price {
         line-height: 1.5;
-        color: rgb(245 165 30 / 100%);
+        color: rgb(245 165 30);
       }
 
       &-volume {

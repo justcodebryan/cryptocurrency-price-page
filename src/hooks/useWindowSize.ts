@@ -5,7 +5,7 @@ type WindowSizeDataType = {
   height?: number
 }
 
-const useWindowSize = () => {
+const useWindowSize = (): WindowSizeDataType => {
   const [windowSize, setWindowSize] = useState<WindowSizeDataType>({
     width: undefined,
     height: undefined,

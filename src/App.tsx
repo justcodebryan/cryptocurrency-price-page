@@ -2,7 +2,6 @@ import '@/styles/reset.css'
 import '@/styles/index.scss'
 import { useRoutes } from 'raviger'
 import { Suspense } from 'react'
-import Box from './components/Box'
 import routes from './routes'
 
 function App() {
@@ -10,9 +9,7 @@ function App() {
 
   return (
     <div className="app">
-      <Suspense fallback={<div>Loading...</div>}>
-        <Box>{route}</Box>
-      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>{route}</Suspense>
     </div>
   )
 }

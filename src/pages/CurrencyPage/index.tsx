@@ -1,3 +1,4 @@
+import Box from '@/components/Box'
 import Card from '@/components/Card'
 import Section from '@/components/Section'
 import Title from '@/components/Title'
@@ -5,6 +6,7 @@ import Typography from '@/components/Typography'
 import useEffectOnce from '@/hooks/useEffectOnce'
 import { fetchCurrencyList } from '@/services/currency'
 import { Currency, CurrencyQueryString } from '@/types/currency'
+import { DEFAULT_POLLING_INTERVAL } from '@/utils/constants'
 import { useState } from 'react'
 
 import styles from './styles.module.scss'
@@ -12,18 +14,25 @@ import styles from './styles.module.scss'
 const CurrencyPage = () => {
   const [currencyList, setCurrencyList] = useState<Currency[]>([])
 
-  const getCurrencyList = async () => {
-    const res = await fetchCurrencyList(CurrencyQueryString)
-
-    setCurrencyList(res)
-  }
-
   useEffectOnce(() => {
+    const getCurrencyList = async () => {
+      const res = await fetchCurrencyList(CurrencyQueryString)
+      setCurrencyList(res)
+    }
+
+    const interval = setInterval(() => {
+      getCurrencyList()
+    }, DEFAULT_POLLING_INTERVAL)
+
     getCurrencyList()
+
+    return () => {
+      clearInterval(interval)
+    }
   })
 
   return (
-    <>
+    <Box>
       <Title level={1} className={styles['currency-title']}>
         Cryptocurrency Realtime Price
       </Title>
@@ -39,13 +48,13 @@ const CurrencyPage = () => {
               </Title>
               <Typography className={styles['currency-list-item-volume']}>
                 <p>volume:</p>
-                {currency.volume_1day_usd}
+                <div>{currency.volume_1day_usd}</div>
               </Typography>
             </div>
           </Card>
         ))}
       </Section>
-    </>
+    </Box>
   )
 }
 

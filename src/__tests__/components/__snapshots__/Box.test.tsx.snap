@@ -1,0 +1,7 @@
+// Vitest Snapshot v1
+
+exports[`Box Test Suit > Box Snapshot 1`] = `
+<div
+  className="_box_6c0536"
+/>
+`;

@@ -1,0 +1,25 @@
+// Vitest Snapshot v1
+
+exports[`Box Page Test Suit > Box Page Snapshot 1`] = `
+<div
+  className="_box_6c0536"
+/>
+`;
+
+exports[`Box Test Suit > Box Page Snapshot 1`] = `
+<div
+  className="_box_6c0536"
+/>
+`;
+
+exports[`Box Test Suit > Box Snapshot 1`] = `
+<div
+  className="_box_6c0536"
+/>
+`;
+
+exports[`Currency Page Test Suit > Currency Page Snapshot 1`] = `
+<div
+  className="_box_6c0536"
+/>
+`;

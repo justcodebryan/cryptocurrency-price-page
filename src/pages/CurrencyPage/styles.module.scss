@@ -1,31 +1,55 @@
 .currency {
   &-title {
     margin: 30px 0 24px 24px;
+    word-wrap: break-word;
   }
 
   &-list {
     width: calc(100% - 12px * 2);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 48px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 48px;
     grid-auto-rows: minmax(160px, auto);
+
+    @media screen and (max-width: (400px)) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
 
     &-item {
       padding: 12px 0 8px 16px;
-      height: 100%;
       box-sizing: border-box;
 
+      &-title {
+        word-wrap: break-word;
+      }
+
       &-price {
+        width: calc(100% - 8px);
         line-height: 1.5;
         color: rgb(245 165 30);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        overflow: hidden;
       }
 
       &-volume {
+        width: calc(100% - 8px);
         color: rgb(150 150 150);
 
         & > p {
+          width: 100%;
           line-height: 1.5;
           font-weight: 600;
+        }
+
+        & > div {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          -o-text-overflow: ellipsis;
+          overflow: hidden;
         }
       }
     }

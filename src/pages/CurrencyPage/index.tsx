@@ -1,3 +1,4 @@
+import Box from '@/components/Box'
 import Card from '@/components/Card'
 import Section from '@/components/Section'
 import Title from '@/components/Title'
@@ -31,7 +32,7 @@ const CurrencyPage = () => {
   })
 
   return (
-    <>
+    <Box>
       <Title level={1} className={styles['currency-title']}>
         Cryptocurrency Realtime Price
       </Title>
@@ -47,13 +48,13 @@ const CurrencyPage = () => {
               </Title>
               <Typography className={styles['currency-list-item-volume']}>
                 <p>volume:</p>
-                {currency.volume_1day_usd}
+                <div>{currency.volume_1day_usd}</div>
               </Typography>
             </div>
           </Card>
         ))}
       </Section>
-    </>
+    </Box>
   )
 }
 

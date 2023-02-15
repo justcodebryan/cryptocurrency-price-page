@@ -28,6 +28,7 @@ specifiers:
   lint-staged: ^13.1.0
   postcss: ^8.4.21
   postcss-html: ^1.5.0
+  postcss-pxtorem: ^6.0.0
   postcss-scss: ^4.0.6
   prettier: ^2.8.3
   raviger: ^4.1.2
@@ -76,6 +77,7 @@ devDependencies:
   jest-environment-jsdom: 29.4.2
   lint-staged: 13.1.1
   postcss-html: 1.5.0
+  postcss-pxtorem: 6.0.0_postcss@8.4.21
   postcss-scss: 4.0.6_postcss@8.4.21
   prettier: 2.8.4
   stylelint: 14.16.1
@@ -4713,6 +4715,14 @@ packages:
 
   /postcss-media-query-parser/0.2.3:
     resolution: {integrity: sha512-3sOlxmbKcSHMjlUXQZKQ06jOswE7oVkXPxmZdoB1r5l0q6gTFTQSHxNxOrCccElbW7dxNytifNEo8qidX2Vsig==}
+    dev: true
+
+  /postcss-pxtorem/6.0.0_postcss@8.4.21:
+    resolution: {integrity: sha512-ZRXrD7MLLjLk2RNGV6UA4f5Y7gy+a/j1EqjAfp9NdcNYVjUMvg5HTYduTjSkKBkRkfqbg/iKrjMO70V4g1LZeg==}
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      postcss: 8.4.21
     dev: true
 
   /postcss-resolve-nested-selector/0.1.1:

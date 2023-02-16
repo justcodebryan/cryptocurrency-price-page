@@ -1,17 +1,17 @@
-import Box from '@/components/Box'
+import Section from '@/components/Section'
 import { toJSON } from '@/utils/test-utils'
-import { render, screen } from '@testing-library/react'
 import renderer from 'react-test-renderer'
+import { render, screen } from '@testing-library/react'
 
-describe('Box Test Suit', () => {
-  test('Box Snapshot', () => {
-    const component = renderer.create(<Box />)
+describe('Section Test Suit', () => {
+  test('Section Snapshot', () => {
+    const component = renderer.create(<Section />)
     const tree = toJSON(component)
     expect(tree).toMatchSnapshot()
   })
 
   test('Should show children element', () => {
-    const { container } = render(<Box>test</Box>)
+    const { container } = render(<Section>test</Section>)
     expect(container.querySelector('div')).toBeDefined()
     expect(screen.getByText('test')).toBeDefined()
   })

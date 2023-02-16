@@ -34,4 +34,10 @@ describe('Title Test Suit', () => {
     const { container } = render(<Title />)
     expect(container.querySelector('div')).toBeDefined()
   })
+
+  test('Should show children element', () => {
+    const { container } = render(<Title>test</Title>)
+    expect(container.querySelector('div')).toBeDefined()
+    expect(screen.getByText('test')).toBeDefined()
+  })
 })

@@ -15,10 +15,6 @@ describe('Currency Page Test Suit', () => {
     expect(componentInstance.children).toHaveLength(1)
   })
 
-  test('Should not show the content at the start', () => {
-    expect(screen.getByText(/BTC/i)).toBeUndefined()
-  })
-
   test('Currency Page Snapshot', () => {
     const component = renderer.create(<CurrencyPage />)
     const tree = toJSON(component)

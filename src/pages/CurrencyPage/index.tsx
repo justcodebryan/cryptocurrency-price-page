@@ -17,6 +17,7 @@ const CurrencyPage = () => {
   useEffectOnce(() => {
     const getCurrencyList = async () => {
       const res = await fetchCurrencyList(CurrencyQueryString)
+      if (!res) return
       setCurrencyList(res)
     }
 

@@ -1,0 +1,7 @@
+// Vitest Snapshot v1
+
+exports[`Card Test Suit > Card Snapshot 1`] = `
+<div
+  className="_card-wrapper_003db1 _card_003db1"
+/>
+`;

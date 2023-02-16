@@ -1,0 +1,7 @@
+// Vitest Snapshot v1
+
+exports[`Title Test Suit > Title Snapshot 1`] = `
+<div
+  className="_title_35ba99"
+/>
+`;

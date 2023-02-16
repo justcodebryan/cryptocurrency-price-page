@@ -1,0 +1,31 @@
+// Vitest Snapshot v1
+
+exports[`Currency Page DOM Test 1`] = `
+<div
+  className="_box_6c0536"
+>
+  <h1
+    className="_title_35ba99 _title-1_35ba99 _currency-title_f561ab"
+  >
+    Cryptocurrency Realtime Price
+  </h1>
+  <div
+    className="_section_8f1029 _currency-list_f561ab"
+  />
+</div>
+`;
+
+exports[`Currency Page Test Suit > Currency Page Snapshot 1`] = `
+<div
+  className="_box_6c0536"
+>
+  <h1
+    className="_title_35ba99 _title-1_35ba99 _currency-title_f561ab"
+  >
+    Cryptocurrency Realtime Price
+  </h1>
+  <div
+    className="_section_8f1029 _currency-list_f561ab"
+  />
+</div>
+`;
